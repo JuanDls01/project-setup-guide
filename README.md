@@ -4,9 +4,9 @@ This project serves as a guide on how I set up every new project, following best
 
 ## 📜 Table of contents
 
-1. Enforcing Code Standards: Husky, Prettier & ESLint. Here I specified how to setup Husky to automatically run Prettier & ESLint before every commit. With this we guarantee the quality of our code.
+1. [Enforcing Code Standards](#enforcing-code-standards). Here I specified how to setup Husky to automatically run Prettier & ESLint before every commit. With this we guarantee the quality of our code.
 
-## Enforcing Code Standards: Husky, Prettier & ESLint
+## Enforcing Code Standards
 
 To maintain a **consistent code style** and **prevent bad commits**, we will be using:
 
@@ -77,3 +77,5 @@ Edit your package.json and add the following:
 
 By setting up these tools, we ensure that our code is always formatted correctly and follows best practices before committing changes.
 This prevents unnecessary formatting issues and helps maintain high code quality across the team.
+
+## Prueba Link
