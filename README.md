@@ -77,5 +77,3 @@ Edit your package.json and add the following:
 
 By setting up these tools, we ensure that our code is always formatted correctly and follows best practices before committing changes.
 This prevents unnecessary formatting issues and helps maintain high code quality across the team.
-
-## Prueba Link
