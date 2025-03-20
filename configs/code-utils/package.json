@@ -1,8 +1,8 @@
 {
-  "name": "use-paginated-fetch",
+  "name": "code-utils",
   "version": "1.0.0",
   "description": "A reusable React hook (useFetch) for fetching data from an API. It includes built-in loading and error states, supports cleanup with AbortController, and ensures safe state updates. Ideal for handling API calls efficiently in React applications.",
-  "main": "usePaginatedFetch.tsx",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,9 +20,13 @@
   },
   "homepage": "https://github.com/JuanDls01/project-setup-guide#readme",
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@types/react": "^19.0.12"
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4"
   }
 }
