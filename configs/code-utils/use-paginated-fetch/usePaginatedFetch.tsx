@@ -13,6 +13,7 @@ type UseFetchResponse<T> = {
   setPage: Dispatch<SetStateAction<number>>;
 };
 
+// TODO: Add abortController to abort fetching if the hook / component was unmounted.
 export function usePaginatedFetch<T>(url: string): UseFetchResponse<T> {
   const [data, setData] = useState<{ [key: number]: T }>({});
   const [page, setPage] = useState(1);
