@@ -31,3 +31,30 @@ type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
 export { FormEvent, MouseEvent, ChangeEvent };
 ```
+
+### Invariant fc
+
+❌ Avoid deeply nested validations that are hard to read.
+
+✅ Instead use invariants.
+
+```ts
+function invariant(condition: any, message?: string) {
+  if (condition) {
+    return;
+  }
+  throw new Error(message);
+}
+
+async function authenticateUser(credentials: {
+  username: string;
+  password: string;
+}) {
+  const { username, password } = credentials;
+
+  invariant(
+    username && username.length >= 3,
+    "Username must be at least 3 characters long"
+  );
+}
+```
