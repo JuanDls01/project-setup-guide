@@ -58,3 +58,22 @@ async function authenticateUser(credentials: {
   );
 }
 ```
+
+### How to virtualize large lists
+
+```tsx
+import { FixedSizeList as List } from 'react-window';
+
+const list = [...]; // 10k items here
+const Row = ({index, style}) => (
+  <div>
+    <User user={list[index]} />
+  </div>
+);
+
+const ExpensiveList = () => (
+  <List height={150} itemCount={10000} itemSize={35} width={300}>
+    {Row}
+  </List>
+);
+```
