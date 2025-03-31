@@ -14,11 +14,28 @@ This project serves as a guide on how I set up every new project, following best
 
 This convention breaks component names into three meaningful parts:
 
-BASE: The core entity or subject the component relates to (e.g., `User`, `Product`, `Dashboard`).
+- `BASE`: The core entity or subject the component relates to (e.g., `User`, `Product`, `Dashboard`).
 
-COMPOSITE: Additional information describing the component’s role or relation (e.g., `Profile`, `Header`, `Messages`).
+- `COMPOSITE`: Additional information describing the component’s role or relation (e.g., `Profile`, `Header`, `Messages`).
 
-SUFFIX: The type of UI element or its role in the system (e.g., `Card`, `List`, `Form`).
+- `SUFFIX`: The type of UI element or its role in the system (e.g., `Card`, `List`, `Form`).
+
+### API Design Best Practices
+
+**Error Handling:** Use precise status codes and detailed messages, while ensuring no sensitive information is exposed.
+
+- ❌ ErrorMessage: Something went wrong
+- ✅ ErrorMessage: User not found. ID does not exist.
+
+**Consistent naming:** Choose a convention and stick with it. Follow RESTful conventions.
+
+- ❌ /create_user, /getUserDetail
+- ✅ POST /users, GET /users/:id
+
+**Controlled Fetching:** Enable data filtering through query parameters. Excessive or insufficient data can degrade performance.
+
+- ❌ Over-fetching / Under-fetching: /users/{id}
+- ✅ Use query parameters: GET /users/{id}?fields=name,email.
 
 ### Event Types
 
