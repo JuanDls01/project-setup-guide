@@ -12,9 +12,7 @@ When starting a new project, one of the first and most crucial steps is to defin
 
 Each approach has its own advantages and is suited for different scenarios. Below, we discuss these structures with examples and when to use each.
 
-## 📁 Folder Structures
-
-### By Type
+## By Type
 
 A traditional approach where files are grouped by their function/type. Best suited for small projects or prototypes where structure simplicity is preferred.
 
@@ -57,7 +55,7 @@ A traditional approach where files are grouped by their function/type. Best suit
 - Can become difficult to manage in larger projects.
 - Features are fragmented across multiple directories.
 
-### By Type & Feature
+## By Type & Feature
 
 A hybrid approach where each feature/module contains its own substructure, while still maintaining type-based folders for shared resources. Ideal for medium to large-scale projects where modularity is crucial.
 
@@ -102,7 +100,7 @@ src/
 
 - Slightly more complex than pure type-based structure.
 
-### Screaming Architecture
+## Screaming Architecture
 
 Prioritizes business domains over technical concerns, making it clear what the application does from the folder structure. Best for enterprise-level projects or domain-driven applications.
 
@@ -135,6 +133,34 @@ src/
 |   |   └── utils/
 ```
 
+```
+src/
+|── exercise/               # Exercise Domain
+|   |── components/         # UI components specific to exercises
+|   |── api/                # API interactions for exercises
+|   |── types/              # Type definitions
+|   |── hooks/              # Custom hooks
+|   |── utils/              # Utility functions
+|   └── context/            # State management
+|── workout/                # Workout domain
+|   |── components/
+|   |── api/
+|   |── types/
+|   |── hooks/
+|   |── utils/
+|   └── context/
+|── user/                   # User domain
+|   |── components/
+|   |── api/
+|   |── types/
+|   └── context/
+|── shared/                 # Shared resources
+|   |── ui/                 # Reusable UI components
+|   |── utils/              # Common utilities
+|   |── hooks/              # Shared hooks
+|   └── types/              # Common types
+```
+
 ✅ **Pros**:
 
 - Reflects the business domains of the application.
@@ -145,6 +171,36 @@ src/
 
 - Can be confusing for developers used to type-based structures.
 - Requires clear documentation and onboarding for new team members.
+
+### Rules
+
+1. **Domain-First Organization**
+
+   - Each major feature/domain should have its own top-level directory in `src/`
+   - Domain names should be clear and descriptive of the business functionality
+   - Example: `exercise/`, `workout/`, `user/`, etc.
+
+2. **Domain Module Structure**
+
+   - Each domain module should be self-contained
+   - Common internal structure:
+     - `components/` - UI components specific to the domain
+     - `api/` - API interactions and data fetching
+     - `types/` - TypeScript types and interfaces
+     - `hooks/` - Custom React hooks
+     - `utils/` - Domain-specific utilities
+     - `context/` - State management
+
+3. **Shared Resources**
+
+   - Common code used across multiple domains goes in `shared/`
+   - UI components that are used by multiple domains should be in `shared/ui/`
+   - Utility functions used across domains go in `shared/utils/`
+
+4. **Import Rules**
+   - Components should import from their own domain first
+   - Cross-domain imports should use path aliases
+   - Shared components should be imported from `@shared/*`
 
 🚀 Conclusion
 
