@@ -20,6 +20,23 @@ This convention breaks component names into three meaningful parts:
 
 - `SUFFIX`: The type of UI element or its role in the system (e.g., `Card`, `List`, `Form`).
 
+### File Naming Conventions
+
+1. **Components**
+
+- Use kebab-case for files: `exercise-card.tsx`
+- Use PascalCase for component names: `ExerciseCard`
+
+2. **Utilities and Hooks**
+
+- Use kebab-case for files: `use-exercise.ts`
+- Prefix hooks with `use`: `useExercise`
+
+3. **Types**
+
+- Use kebab-case for files: `exercise-types.ts`
+- Use PascalCase for type names: `Exercise`
+
 ### API Design Best Practices
 
 **Error Handling:** Use precise status codes and detailed messages, while ensuring no sensitive information is exposed.
