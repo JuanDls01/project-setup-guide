@@ -54,6 +54,28 @@ This convention breaks component names into three meaningful parts:
 - ❌ Over-fetching / Under-fetching: /users/{id}
 - ✅ Use query parameters: GET /users/{id}?fields=name,email.
 
+### Prefix's for booleans
+
+1. **IS** for simple states:
+
+- ❌ active
+- ✅ isActive
+
+2. **HAS** for ownership:
+
+- ❌ subsciption
+- ✅ hasSubscription
+
+3. **SHOULD** for expected behavior:
+
+- ❌ retry
+- ✅ shouldRetry
+
+4. **CAN** for capabilities:
+
+- ❌ edit
+- ✅ canEdit
+
 ### Event Types
 
 eventTypes.ts
